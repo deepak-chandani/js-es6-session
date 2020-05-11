@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      function test() {
+        const user = ["Tim Ferris", "@timferris", "Eden, Utah"];
+        // const name = user[0];
+        // const handle = user[1];
+        // const location = user[2];
+        const [, , location] = user;
+        console.log("location: " + location);
+      }
+
+      function getAvgTemp() {
+        // refactor with nested destructuring
+        const weather = {
+          location: "Toronto",
+          unit: "Celsius",
+          today: { max: 2.6, min: -6.3 },
+          tomorrow: { max: 3.2, min: -5.8 },
+        };
+        // const maxToday = weather.today.max;
+        // const minToday = weather.today.min;
+
+        // const maxTomorrow = weather.tomorrow.max;
+        // const minTomorrow = weather.tomorrow.min;
+
+        const {
+          unit,
+          today: {
+            max: maxToday,
+            min: minToday,
+          },
+          tomorrow: {
+            max: maxTomorrow,
+            min: minTomorrow
+          }
+        } = weather;
+
+
+        const info = {
+          max: (maxToday + maxTomorrow) / 2.0,
+          min: (minToday + minTomorrow) / 2.0,
+          unit: weather.unit,
+        };
+        console.log(info);
+      }
+    </script>
+  </head>
+  <body>
+    <h3>Examples</h3>
+    <button onclick="getAvgTemp()" type="button">test1</button>
+    <hr />
+    <h3>Quiz Time</h3>
+    <button onclick="logDate()" type="button">logDate</button>
+  </body>
+</html>

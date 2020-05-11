@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <style>
+      div {
+        float: left;
+        width: 40%;
+      }
+    </style>
+    <script type="text/javascript">
+      let People = function(name, age) {
+        this.name = name;
+        this.age = age;
+        this.info = function() {
+          let div = document.getElementById("output1");
+
+          setTimeout(function() {
+            div.innerHTML +=
+              "<br/>" + this.name + " is " + this.age + " years old";
+          }, 100);
+        };
+      };
+
+      let People2 = function(name, age) {
+        this.name = name;
+        this.age = age;
+        this.info = function() {
+          let div = document.getElementById("output2");
+
+          setTimeout(() => {
+            // arrow function to make lexical "this" binding
+            div.innerHTML +=
+              "<br/>" + this.name + " is " + this.age + " years old";
+          }, 100);
+        };
+      };
+
+      const runWithoutArrow = () => {
+        let john = new People("John", 21);
+        john.info();
+      };
+
+      const runWithArrow = () => {
+        let tim = new People2("Tim", 30);
+        tim.info();
+      };
+    </script>
+  </head>
+  <body>
+    <div id="output1">
+      <button onclick="runWithoutArrow()" type="button">Without Arrow</button>
+      <br />
+    </div>
+
+    <div id="output2">
+      <button onclick="runWithArrow()" type="button">With Arrow</button> <br />
+    </div>
+  </body>
+</html>

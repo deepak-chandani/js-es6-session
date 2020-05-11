@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <style>
+      div {
+        float: left;
+        width: 40%;
+      }
+    </style>
+    <script type="text/javascript">
+      function extractRemaining() {
+        let { a, b, ...rest } = { a: 10, b: 20, c: 30, d: 40 };
+        console.log(a, b, rest);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="output1">
+      <button onclick="extractRemaining()" type="button">Extract remaining</button> <br />
+    </div>
+  </body>
+</html>

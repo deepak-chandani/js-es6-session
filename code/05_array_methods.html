@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <style>
+      div {
+        float: left;
+        width: 40%;
+      }
+    </style>
+    <script type="text/javascript">
+      let array = [
+        {
+          name: "React",
+          rating: 4.5,
+          since: 2017
+        },
+        {
+          name: "Angular",
+          rating: 4,
+          since: 2010
+        },
+        {
+          name: "Backbone",
+          rating: 2,
+          since: 2010
+        },
+        {
+          name: "jQuery",
+          rating: 3,
+          since: 2006
+        }
+      ];
+
+      const run = () => {
+
+        //iterate to all courses
+        array.forEach(element => console.log(element));
+
+        //collect all course names
+        let names = array.map(element => element.name);
+        console.log("courses", names);
+
+        //collect all course that introduced after 2015
+        let newCourses = array.filter(element => element.since > 2015);
+        console.log("new Course", newCourses);
+
+        
+        //collect all course that introduced after 2015 (same function with find)
+        let newCoursesFind = array.find(element => element.since > 2015);
+        console.log("new Course", newCoursesFind);
+
+
+        //reduce
+        let arr = [5,3,7,9,8,9,10];
+        const initialValue = 0;
+        let sum = arr.reduce((accumulator, item) => accumulator + item , initialValue);
+        console.log(sum);
+
+      };
+    </script>
+  </head>
+  <body>
+    <div id="output1">
+      <button onclick="run()" type="button">Run</button> <br />
+    </div>
+  </body>
+</html>

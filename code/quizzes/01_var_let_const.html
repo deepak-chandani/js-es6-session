@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      // "use strict";
+      function temporalDeadZone() {
+        console.log(myVar); // undefined
+        // console.log(myLet); // error
+        console.log(myConst); // error
+
+        var myVar = "var";
+        let myLet = "let";
+        const myConst = "const";
+        return { myVar: myVar, myLet: myLet, myConst: myConst };
+      }
+
+      let firstName;
+
+
+      // function test2() {
+      //   let name = "Deepak";
+      //   const email = "deepak.chandani@thepsi.com";
+
+      //   name = "Deepak Chandani";
+      //   email = "deep.chandani@gmail.com";
+      // }
+
+      // function logDate() {
+      //   function getDate() {
+      //     var date = new Date();
+      //     return date;
+      //   }
+
+      //   getDate();
+      //   console.log(date); // ?
+      // }
+    </script>
+  </head>
+  <body>
+    <h3>Examples</h3>
+    <button onclick="temporalDeadZone()" type="button">test1</button>
+    <hr />
+    <button onclick="test2()" type="button">test2</button>
+    <hr />
+    <h3>Quiz Time</h3>
+    <button onclick="logDate()" type="button">logDate</button>
+  </body>
+</html>
