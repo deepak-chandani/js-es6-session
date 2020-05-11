@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="https://radiant-sands-51546.herokuapp.com/profile/deepak.chandani">
-  <img src="logo.jpg" alt="React hooks" width="465"></a>
+  <img src="logo.jpg" alt="React hooks" width="565"></a>
   <br>
 </h1>
 
